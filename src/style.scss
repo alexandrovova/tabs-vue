@@ -1,0 +1,58 @@
+
+@font-face {
+	font-family: "Lato";
+	font-display: swap;
+	src: url("../public/fonts/Lato-Regular.woff2") format("woff2"), url("../public/fonts/Lato-Regular.woff") format("woff");
+	font-weight: 400;
+	}
+@font-face {
+	font-family: "oswald";
+	font-display: swap;
+	src: url("../public/fonts/oswaldmedium.woff2") format("woff2"), url("../public/fonts/oswaldmedium.woff") format("woff");
+	font-weight: 400;
+	}
+@font-face {
+	font-family: "oswaldr";
+	font-display: swap;
+	src: url("../public/fonts/oswaldregular.woff2") format("woff2"), url("../public/fonts/oswaldregular.woff") format("woff");
+	font-weight: 400;
+	}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+  .visully-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1;
+    padding: 0;
+    border: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
+
+  .page {
+    font-family: "Oswald", "Arial", sans-serif;
+    line-height: 18px;
+    background-color: #ffffff;
+    font-style: normal;
+    font-size: 14px;
+    font-weight: 400;
+    color: #000000;
+    margin: 0;
+    min-width: 280px;
+  }
