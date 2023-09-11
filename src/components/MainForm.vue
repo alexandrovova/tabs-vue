@@ -1,6 +1,6 @@
 
 <script setup>
-import FormButton from '../components/FormButton.vue'
+import Form from '../components/Form.vue'
 
 
 </script>
@@ -9,7 +9,7 @@ import FormButton from '../components/FormButton.vue'
 <template>
      <section class="form-page">
       <h2 class="visully-hidden">Форма для заказа машины</h2>
-          <FormButton /> 
+          <Form /> 
     </section>
 </template>
 

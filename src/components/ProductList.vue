@@ -1,42 +1,40 @@
 
 
-<script>
-export default {
-    data() {
-        return {
-            imageList: [],
-            currentIndex: 0
-        };
-    },
-    mounted() {
-        this.imageList = Array.from(
-            document.querySelectorAll('.product__img')
-        );
-        this.updateImage();
-    },
-    methods: {
-        updateImage() {
-            this.imageList.forEach(function (image) {
-                image.style.display = 'none';
-            });
-            this.imageList[this.currentIndex].style.display = 'block';
-        },
-        leftButtonClicked() {
-            this.currentIndex--;
-            if (this.currentIndex < 0) {
-                this.currentIndex = this.imageList.length - 1;
-            }
-            this.updateImage();
-        },
-        rightButtonClicked() {
-            this.currentIndex++;
-            if (this.currentIndex >= this.imageList.length) {
-                this.currentIndex = 0;
-            }
-            this.updateImage();
-        }
-    }
-};
+<script setup>
+import { ref, onMounted } from 'vue';
+
+const imageList = ref([]);
+const currentIndex = ref(0);
+
+onMounted(() => {
+  imageList.value = Array.from(
+    document.querySelectorAll('.product__img')
+  );
+  updateImage();
+});
+
+const updateImage = () => {
+  imageList.value.forEach((image, index) => {
+    image.style.display = index === currentIndex.value ? 'block' : 'none';
+  });
+}
+
+const leftButtonClicked = () => {
+  currentIndex.value--;
+  if (currentIndex.value < 0) {
+    currentIndex.value = imageList.value.length - 1;
+  }
+  updateImage();
+}
+
+const rightButtonClicked = () => {
+  currentIndex.value++;
+  if (currentIndex.value >= imageList.value.length) {
+    currentIndex.value = 0;
+  }
+  updateImage();
+}
+
 </script>
 
 <template>
@@ -293,3 +291,18 @@ $desktop-width: 1280px;
 }
 
 </style>
+
+
+
+<!-- <ul class="product__list">
+    <li class="product__item" v-for="(item, index) in productList" :key="index">
+      <img class="product__img" :src="item.image" :alt="item.alt"/>
+    </li>
+  </ul>
+
+const productList = [
+  { image: "../assets/Porsheone.jpg", alt: "вид машины с боку" },
+  { image: "../assets/porsche-2.jpg", alt: "вид машины с зади" },
+  { image: "../assets/porsche-3.jpg", alt: "вид машины в салоне" },
+  { image: "../assets/porsche-4.jpg", alt: "коробка передачи механическая"}
+];-->

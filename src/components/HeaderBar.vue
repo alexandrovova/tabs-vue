@@ -5,21 +5,12 @@
       <button class="main-nav__toggle" type="button" @click="toggleNav">
         <span class="visully-hidden">Открыть меню.</span>
       </button>
-      <ul class="main-nav__list site-list">
-        <li class="site-list__item">
-          <a class="site-list__link" href="#">Главная</a>
-        </li>
-        <li class="site-list__item">
-          <a class="site-list__link site-list__link--active">Заказать сейчас</a>
-        </li>
-        <li class="site-list__item">
-          <a class="site-list__link" href="#form">FAQ</a>
-        </li>
-      </ul>
+<HeaderList />
     </nav>
   </template>
   
   <script setup>
+  import HeaderList from './HeaderList.vue'
   import { ref } from 'vue';
   
   const isClosed = ref(true);

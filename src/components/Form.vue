@@ -1,5 +1,5 @@
 <template>
-  <form @submit="handleSubmit" action="#" method="post">
+  <form @submit="handleSubmit" action="#" method="post" id="form">
     <fieldset class="form__order">
       <legend class="form__order-name">Закажите Сейчас</legend>
       <ul class="form__list">
@@ -34,7 +34,7 @@ const inputTell = ref('');
 const showModal = ref(false);
 const modalMessage = ref('');
 
-function handleSubmit(event) {
+const handleSubmit = (event) => {
   event.preventDefault();
 
   // Processing the form data here...
@@ -43,8 +43,7 @@ function handleSubmit(event) {
   showModal.value = true;
 
   inputValue.value = ''; // удаляем значение текста в инпуте
-  inputTell.value = ''; // идаляю значения телефона в инпуте 
-
+  inputTell.value = ''; // идаляю значения телефона в инпуте
 }
 
 function closeModal() {
